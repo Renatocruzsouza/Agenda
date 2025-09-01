@@ -1,7 +1,9 @@
 <?php
     include_once("templates/header.php")
 ?>
+     
     <div class="container">
+      
         <?php if(isset($printMsg) && $printMsg != ''):?>
             <p id="msg"><?= $printMsg ?></p>
         <?php endif; ?>
@@ -19,13 +21,13 @@
             <tbody>
                 <?php foreach($contacts as $contact): ?> 
                     <tr>
-                        <td scope="row"><?= $contact["id"] ?></td>
+                        <td scope="row" class="col-id"><?= $contact["id"] ?></td>
                         <td scope="row"><?= $contact["name"] ?></td>
                         <td scope="row"><?= $contact["phone"] ?></td>
                         <td class="actions">
-                            <a href="#"><i class="fas fa-eye check icon"></i></a>
+                            <a href="<?= $BASE_URL ?>show.php?id=<?= $contact["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
                             <a href="#"><i class="far fa-edit edit icon"></i></a>
-                            <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                            <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                         </td>
                     </tr>
                 <?php endforeach; ?>   
