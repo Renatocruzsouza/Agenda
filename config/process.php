@@ -64,6 +64,27 @@ if (!empty($data)) {
             echo "Erro: $error";
         }
         
+    } else if($data["type"] === "delete") {
+
+        $id = $data["id"];
+
+        $query = "DELETE FROM contacts WHERE id = :id";
+
+        $stmt = $conn->prepare($query);
+
+        $stmt->bindParam(":id", $id);
+
+
+         try {
+
+            $stmt->execute();
+            $_SESSION["msg"] = "Contato removido com sucesso";
+
+        } catch (PDOException $e) {
+            // erro na conexxao
+            $error = $e->getMessage();
+            echo "Erro: $error";
+        }
     }
 
     // redirect HOME 
