@@ -9,12 +9,12 @@
 
 /* home */
 
-#contact-table {
+#contacts-table {
     max-width: 800px;
     margin: 0 auto;
 }
 
-#contacts-table thead {
+#contacts-table thead th {
     color: #fff;
     background-color: #007bff;
 }
@@ -41,6 +41,10 @@
     /* color: #007bff; */
 }
 
+.delete-form {
+    display: inline-block;
+}
+
 .delete-btn {
     background-color: transparent;
     border: none;
@@ -62,8 +66,8 @@
     padding: 10px;
     text-align: center;
     max-width: 500px;
-    margin: 0 auto;
-    margin-top: 300px;
+    margin: 20px auto;
+    border-radius: 4px;
 }
 
 /* show / contato individual */
@@ -100,4 +104,12 @@
 #edit-form {
     max-width: 500px;
     margin: 0 auto;
+}
+
+/* mobile */
+@media(max-width: 400px) {
+
+    #home-link {
+        display: none;
+    }
 }
